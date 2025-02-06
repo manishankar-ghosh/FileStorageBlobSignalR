@@ -1,0 +1,101 @@
+﻿<!DOCTYPE html>
+<html>
+<head>
+   <meta charset="utf-8" />
+   <title></title>
+   <link href="Css/Styles.css" rel="stylesheet" />
+   <script src="https://cdnjs.cloudflare.com/ajax/libs/crypto-js/4.1.1/crypto-js.min.js"></script>
+   <script src="https://cdnjs.cloudflare.com/ajax/libs/microsoft-signalr/6.0.1/signalr.js"></script>
+   <script src="Scripts/Chat.js"></script>
+</head>
+<body>
+   <div>
+      <table border="0" style="border-spacing: 30px;">
+         <tr>
+            <td>
+               <fieldset class="fieldset" style="width: 650px; height: 400px">
+                  <legend class="legend">Upload file</legend>
+                  <br />
+                  <div>
+                     <input type="file" id="inputFile" onchange="Upload(this, 'lblFile', 'lblProgress');" accept="*.*" />
+                     <label for="inputFile">Upload</label>&nbsp;
+                     <br /><br />
+                     <span>File details: </span><span id="lblFile"></span>
+                     <br /><br />
+                     <span>Progress: </span><span id="lblProgress"></span>
+                     <br />
+                     <span id="lblTimeRemaining"></span>
+                     <table cellpadding="5">
+                        <tr>
+                           <td>Current slice upload progress</td>
+                           <td>
+                              <progress id="uploadProgress" value="0" max="100" style="width: 400px"></progress>
+                           </td>
+                        </tr>
+                        <tr>
+                           <td>Overall upload progress</td>
+                           <td>
+                              <progress id="overAllProgress" value="0" max="100" style="width: 400px"></progress>
+                           </td>
+                        </tr>
+                     </table>
+                     <br />
+                     <br />
+                     <br />
+                  </div>
+                  <div id="divFileType" style="min-height:21px">
+                  </div>
+                  <div>
+                     <span>
+                        <input class="buttonfocus" type="button" id="btnDownload" value="Download" onclick="Download()" />
+                     </span>
+                     <br /><br />
+                     <div>
+                        <span>
+                           <input class="buttonfocus" type="button" id="btnDelete" value="Delete" onclick="Delete()" />
+                        </span>
+                     </div>
+                  </div>
+                  <div style="clear:both;"></div>
+                  <br />
+                  <div style="min-height: 120px; height: 120px; display:block">
+                     <div id="divGamesList" style="min-height: 110px; height: 110px; overflow: auto; background-color: #aaaa00; color: #0000ff; display: none">
+                        <ol id="lstGamesList" style=""></ol>
+                     </div>
+                  </div>
+
+                  <div id="divNote" style="border-radius: 10px; background-color: #286a9c; padding: 5px">
+                  </div>
+               </fieldset>
+            </td>
+            <td>
+               <fieldset class="fieldset" style="height: 400px">
+                  <legend class="legend">Server side Progress</legend>
+                  <div class="row">
+                     <div class="row p-1">
+                        <div class="col-6">
+                           <ul id="messagesList">
+                           </ul>
+                        </div>
+                     </div>
+                     <div class="row">
+
+                     </div>
+                     <br />
+                     <br />
+
+                  </div>
+               </fieldset>
+            </td>
+         </tr>
+      </table>
+   </div>
+
+   <div id="divSpinner" class="center">
+
+      <!--<img src="Images/spinner.gif" style="width: 10%;" />-->
+   </div>
+   <script src="Scripts/Upload.js"></script>
+
+</body>
+</html>

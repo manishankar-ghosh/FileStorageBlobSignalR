@@ -1,0 +1,63 @@
+﻿#inputFile {
+    width: 0.1px;
+    height: 0.1px;
+    opacity: 0;
+    overflow: hidden;
+    position: absolute;
+    z-index: -1;
+}
+
+    #inputFile:focus + label {
+        /* keyboard navigation */
+        outline: 1px dotted #000;
+        outline: -webkit-focus-ring-color auto 5px;
+    }
+
+    #inputFile + label * {
+        pointer-events: none;
+    }
+
+label, input[type=button] {
+    color: #ffffff;
+    background-color: #00aa00;
+    border-radius: 5px;
+    padding: 5px;
+    border: none;
+}
+
+input[type=button] {
+    color: #ffffff;
+    background-color: #00aa00;
+}
+
+.fieldset {
+    display: inline;
+    padding-top: 0em;
+    padding-bottom: 0.625em;
+    padding-left: 0.75em;
+    padding-right: 10px;
+    border-color: #999;
+    border-style: solid;
+    border-width: 1px;
+    border-radius: 5px;
+    height: 320px;
+}
+
+.legend {
+    display: inline;
+    color: #ffffff;
+    font-size: small;
+    width: auto;
+    margin-bottom: 10px;
+}
+
+div.center {
+    position: absolute;
+    display: none;
+    justify-content: center;
+    align-items: center;
+    width: 90%;
+    vertical-align: middle;
+    justify-content: center;
+    align-items: center;
+}

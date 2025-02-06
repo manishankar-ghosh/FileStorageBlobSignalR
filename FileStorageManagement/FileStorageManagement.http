@@ -1,0 +1,6 @@
+@FileStorageManagement_HostAddress = http://localhost:5024
+
+GET {{FileStorageManagement_HostAddress}}/
+Accept: application/json
+
+###
